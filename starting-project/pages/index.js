@@ -1,12 +1,13 @@
-import { useRouter } from "next/router";
-import Link from "next/link";
+import { getFeaturedEvents } from "../dummy-data";
+import EventList from "../components/events/event-list";
 
 function HomePage() {
-  const router = useRouter();
+  const featuredEvents = getFeaturedEvents();
+
   return (
     <div>
       <h1>The Home Page</h1>
-      <Link href="events">To Events</Link>
+      <EventList items={featuredEvents} />
     </div>
   );
 }
