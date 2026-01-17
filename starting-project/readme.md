@@ -115,3 +115,24 @@ git merge feature
 改坏文件，想恢复 git restore
 两条线汇合       git merge
 整理提交历史     git rebase`
+
+<label htmlFor="year">Year</label>
+<select id="year">
+
+   <option value="2021">2021</option>
+   <option value="2022">2022</option>
+</select>
+htmlFor 和 id: 点击文字Year select也能获得焦点
+
+const selectedYear = yearInputRef.current.value; 所有 selected element in javascript 都有 value 属性
+
+const router = useRouter(); 再次强调 hooks 不能在嵌套语句中 call
+
+useRef 的工作原理
+当你写下 const yearInputRef = useRef(); 时，你创建了一个名为 yearInputRef 的“钩子”。
+
+绑定： <select ref={yearInputRef}> 告诉 React：“把这个真实的 HTML 元素存到我的钩子里去”。
+
+存储： React 会把这个 DOM 元素的引用放在 yearInputRef.current 中。
+
+提取： yearInputRef.current.value 就像是在用原生 JS 写 document.getElementById('year').value，但它是 React 推荐的安全方式。

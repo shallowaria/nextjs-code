@@ -7,7 +7,7 @@ const DUMMY_EVENTS = [
     location: "Somestreet 25, 12345 San Somewhereo",
     date: "2021-05-12",
     image: "images/shenshe-event.jpg",
-    isFeatured: true,
+    isFeatured: false,
   },
   {
     id: "e2",
@@ -46,6 +46,7 @@ export function getFilteredEvents(dateFilter) {
     const eventDate = new Date(event.date);
     return (
       eventDate.getFullYear() === year && eventDate.getMonth() === month - 1
+      // getMonth() 返回的是 0 到 11。必须让传入值小于1
     );
   });
 
