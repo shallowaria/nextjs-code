@@ -79,20 +79,28 @@ feature:    └──D──E`
 git switch main
 git merge feature
 
-````main: A──B──C──┐
-                ├──M
-feature:        └──D──E```
+```main: A──B──C──┐
+                  ├──M
+feature:          └──D──E
+```
+
 M = 合并提交（merge commit）,历史是 真实发生过的,不改任何已有提交
 
 // rebase
 rebase = 把你的提交“挪到”另一条时间线后面
+
 ```main: A──B──C
-feature:     └──D──E```
+feature:     └──D──E
+```
+
 执行
 git switch feature
 git rebase main
-```main:    A──B──C
-feature:       └──D'──E'```
+
+```main: A──B──C
+feature:       └──D'──E'
+```
+
 D' E' = 新提交
 旧的 D E 被“重写”了
 rebase 会“改写历史”
@@ -112,10 +120,11 @@ git rebase origin/main # 把最新 main 接进来
 git switch main
 git merge feature
 
-```你想干嘛          用什么
+```想干嘛 用什么
 改坏文件，想恢复 git restore
 两条线汇合       git merge
-整理提交历史     git rebase```
+整理提交历史     git rebase
+```
 
 <label htmlFor="year">Year</label>
 <select id="year">
@@ -137,4 +146,7 @@ useRef 的工作原理
 存储： React 会把这个 DOM 元素的引用放在 yearInputRef.current 中。
 
 提取： yearInputRef.current.value 就像是在用原生 JS 写 document.getElementById('year').value，但它是 React 推荐的安全方式。
-````
+
+```
+
+```
